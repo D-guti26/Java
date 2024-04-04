@@ -1,0 +1,1 @@
+public enum Characteristics {HP, ATTACK, DEFENSE, SPECIALATK, SPECIALDEF, SPEED};

@@ -1,0 +1,4 @@
+package WK3HW;
+public enum ExerciseOfTheWeek{MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY};
+
+

@@ -1,21 +1,21 @@
 
 public class Program {
   public static void main(String[] args) {
-      int min = 0;
-      int max = 0;
-      int[] emptyArray = {};
-      int[] myArray = {34, 21, 67, 89, 45, 65, 43, 50, 60, 105, 168, 298, 394, 486, 698, 806, 999, 1659};
-      int[] sortedArray = {2, 5, 6, 10, 32, 45, 48, 49, 50, 100, 105, 2000};
+      // int min = 0;
+      // int max = 0;
+      // int[] emptyArray = {};
+      // int[] sortedArray = {2, 5, 6, 10, 32, 45, 48, 49, 50, 100, 105, 2000};
       // System.out.println(SequentialSearch(myArray, 65));
       // int binarySearchResult = BinarySearch(sortedArray, 2000);
       // System.out.println("Binary Search result " + binarySearchResult);
-      QuickSort(myArray);
       // System.out.println("Min" + min + "Max" + max);
-      
-      for (int value : myArray){
-        System.out.print(" " + value);
+      // int[] arr = {34, 21, 67, 89, 45, 65, 43, 50, 60, 105, 168, 298, 394, 486, 698, 806, 999, 1659};
+      // QuickSort(arr);
+      // for (int value : arr){
+      // System.out.print(" " + value);
+      WeightLiftingApp myExercise = new WeightLiftingApp(null, null, 0, 0, 0);
+      System.out.println(myExercise);
  }
-}
 
   public static int SequentialSearch(int[] arrayToSearch, int valueToLookFor) {
     
@@ -72,7 +72,39 @@ public class Program {
       return new int[] {min, max};
     
   }
-  
+  public static void BubbleSort(int[] arr) {
+    int temp; // O(1)
+
+    for (int i = 0; i < arr.length - 1; i++) {
+        for (int j = 0; j < arr.length - 1; j++) {
+            // swapping
+            if (arr[j] < arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+public static void SelectionSort(int[] arr) {
+    int minIndex, temp;
+
+    for (int i = 0; i < arr.length; i++) {
+        minIndex = i;
+
+        for (int j = i; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                // arr[minIndex] = arr[j];
+                minIndex = j;
+            }
+        }
+
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+}
 
 public static void QuickSort(int[] arr) {
   
@@ -94,7 +126,7 @@ public static void RecursiveQuickSort(int[] arr, int low, int high) {
     RecursiveQuickSort(arr, pivotIndex + 1, high);
   }
 }
-  public static int Partition(int[] arr, int low, int high) {
+public static int Partition(int[] arr, int low, int high) {
     int pivot = arr[high];
     // set position for smaller element
     int i = (low - 1);
@@ -105,23 +137,19 @@ public static void RecursiveQuickSort(int[] arr, int low, int high) {
 
       if (arr[j] < pivot) {
         i++;
-        // swap
+        // swap indexes
         Swap(arr, i, j);
       }
      }
      Swap(arr, i + 1, high);
      // System.out.println(arr);
     return i + 1;
-
     }
-
-
-    public static void Swap(int[] arr, int index1, int index2){
-      int temp = arr[index1];
-      arr[index1] = arr[index2];
-      arr[index2] = temp;
-
-    }
+public static void Swap(int[] arr, int index1, int index2){
+  int temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
 }
 
 
